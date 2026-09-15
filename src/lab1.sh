@@ -10,6 +10,7 @@ PROJECT_DIR="/tmp/project"
 # Create the main 'project' directory and its subdirectories: 'data', 'scripts', 'logs', and 'backup'.
 echo "Creating directory structure..."
 # TODO: create the required directories under "${PROJECT_DIR}"
+mkdir -p "${PROJECT_DIR}/data" "${PROJECT_DIR}/scripts" "${PROJECT_DIR}/logs" "${PROJECT_DIR}/backup"
 
 # 2. File Operations
 # In the 'data' directory, create five text files and add sample content to each.
