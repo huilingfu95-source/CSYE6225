@@ -57,7 +57,7 @@ du -shc "${PROJECT_DIR}/data" "${PROJECT_DIR}/logs"
 # Identify and display the 10 largest files and directories within the 'project' directory.
 echo "Displaying the 10 largest files and directories in 'project'..."
 # TODO: show the 10 largest items under "${PROJECT_DIR}"
-du -ah "${PROJECT_DIR}" | sort -rh head -n 10
+du -ah "${PROJECT_DIR}" | sort -rh | head -n 10
 
 # 4. File Permissions and Ownership
 # Set specific file permissions 644 for 'file1.txt' in the 'backup' directory.
@@ -102,14 +102,19 @@ ps aux | grep bash
 # Use the current date to name the archive file.
 echo "Creating a compressed archive of the 'backup' directory..."
 # TODO: create a dated archive of "${PROJECT_DIR}/backup" inside "${PROJECT_DIR}/backup"
-
+CURRENT_DATE=$(date +%Y-%m-%d)
+tar -czf "${PROJECT_DIR}/backup/backup_${CURRENT_DATE}.tar.gz" -C "${PROJECT_DIR}" backup
 
 # 8. Log Completion
 # Create a log message indicating the completion of the assignment tasks and store it in a 'README.md' file inside the 'project' directory.
 echo "Logging completion message..."
 # TODO: write a one-line completion message to "${PROJECT_DIR}/README.md"
-
+echo "Assignment completed" > "${PROJECT_DIR}/README.md"
 # 9. Directory Existence Verification
 # Add a verification step at the end of the script to check if the 'data' directory exists. If it doesn’t, the script should log an error message and exit.
 echo "Verifying final directory state..."
 # TODO: confirm that "${PROJECT_DIR}/data" exists; if not, print an error and exit
+if [ ! -d "${PROJECT_DIR}/data" ]; then
+    echo "Error:data directory does not exist"
+    exit 1
+fi
