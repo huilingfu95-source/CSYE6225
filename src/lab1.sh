@@ -73,7 +73,7 @@ chmod 644 "${PROJECT_DIR}/data/file3_renamed.txt"
 # Change the ownership of 'file4.txt' in the 'logs' directory to another user and group (nobody:nogroup).
 echo "Changing ownership of 'file4.txt'..."
 # TODO: change ownership of "${PROJECT_DIR}/logs/file4.txt" to nobody:nogroup
-chown nobody:nogroup "${PROJECT_DIR}/logs/file4.txt"
+sudo chown nobody:nogroup "${PROJECT_DIR}/logs/file4.txt"
 
 # 5. Symbolic Links
 # Create a symbolic link in the 'scripts' directory pointing to 'backup/file1.txt' in the 'backup' directory.
