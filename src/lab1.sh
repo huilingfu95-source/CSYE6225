@@ -36,7 +36,7 @@ mv "${PROJECT_DIR}/data/file3.txt" "${PROJECT_DIR}/data/file3_renamed.txt"
 # Move 'file4.txt' and 'file5.txt' to the 'logs' directory. Force the move to avoid prompts.
 echo "Moving 'file4.txt' and 'file5.txt' to 'logs' directory..."
 # TODO: move file4.txt and file5.txt into "${PROJECT_DIR}/logs"
-mv -f "${PROJECT_DIR}/data/file4.txt" "${PROJECT_DIR}/data/file5.txt" ${PROJECT_DIR}/logs
+mv -f "${PROJECT_DIR}/data/file4.txt" "${PROJECT_DIR}/data/file5.txt" "${PROJECT_DIR}/logs"
 
 # Delete 'file2.txt' from the 'data' directory.
 echo "Deleting 'file2.txt' from 'data' directory..."
@@ -102,8 +102,10 @@ ps aux | grep bash
 # Use the current date to name the archive file.
 echo "Creating a compressed archive of the 'backup' directory..."
 # TODO: create a dated archive of "${PROJECT_DIR}/backup" inside "${PROJECT_DIR}/backup"
-CURRENT_DATE=$(date +%Y-%m-%d)
-tar -czf "${PROJECT_DIR}/backup/backup_${CURRENT_DATE}.tar.gz" -C "${PROJECT_DIR}" backup
+CURRENT_DATE=$(date +%Y%m%d)
+tar --exclude="backup/backup_${CURRENT_DATE}.tar.gz" \
+    -czf "${PROJECT_DIR}/backup/backup_${CURRENT_DATE}.tar.gz" \
+    -C "${PROJECT_DIR}" backup
 
 # 8. Log Completion
 # Create a log message indicating the completion of the assignment tasks and store it in a 'README.md' file inside the 'project' directory.
