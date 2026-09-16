@@ -68,7 +68,7 @@ sudo chown nobody:nogroup "${PROJECT_DIR}/logs/file4.txt"
 # Create a symbolic link in the 'scripts' directory pointing to 'backup/file1.txt' in the 'backup' directory.
 echo "Creating symbolic link 'file1_link.txt' in 'scripts' directory..."
 # TODO: create a symlink named file1_link.txt in "${PROJECT_DIR}/scripts" that points to ../backup/file1.txt
-ln -s ../backup/file1.txt "${PROJECT_DIR}/scripts/file1_link.txt"
+ln -sf ../backup/file1.txt "${PROJECT_DIR}/scripts/file1_link.txt"
 # Manually verify that (use ls) the symbolic link has been created and points to the correct target.
 echo "Verifying the symbolic link of file1.txt..."
 # TODO: use ls or readlink to confirm the symlink target
