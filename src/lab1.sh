@@ -68,7 +68,7 @@ chmod 644 "${PROJECT_DIR}/backup/file1.txt"
 # Set specific file permissions 644 for 'file3_renamed.txt' in the 'logs' directory.
 echo "Setting file permissions 644 for 'file3_renamed.txt'..."
 # TODO: set permissions for "${PROJECT_DIR}/logs/file3_renamed.txt" to 644
-chmod 644 "${PROJECT_DIR}/logs/file3_renamed.txt"
+chmod 644 "${PROJECT_DIR}/data/file3_renamed.txt"
 
 # Change the ownership of 'file4.txt' in the 'logs' directory to another user and group (nobody:nogroup).
 echo "Changing ownership of 'file4.txt'..."
